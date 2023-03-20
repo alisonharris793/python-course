@@ -15,6 +15,7 @@
 #
 # Could Have (nice to have initiatives that will have a small impact if left out)
 # Introducing the game to the player and asking if they'd like to play
+#Ask if the player would like to play again
 # Allow the opponent (computer) to choose a stat that they would like to compare
 #
 # Will Not Have (initiatives that are not priority for this specific time frame)
@@ -25,9 +26,12 @@ import random
 import requests
 
 
-#EXTENTION add in
-print("\nhello, are you ready to play pokemon top trumps?")
-player = input("please enter your name here : ")
+#EXTENTION welcome player to the game
+print("Welcome to the Pokemon Top Trumps Game!\n")
+playername = input("Please enter your name: ")
+print("Hello " + playername + ", get ready to enter the world of Pokemon!\n")
+computername = "Computer"
+print("You are playing against " + computername +  ", get ready...\n")
 
 
 # this is a function that calls the pokemon API and returns four stats from a random pokemon
@@ -50,7 +54,7 @@ def run():
     score = 0
     for x in range(3):
         my_pokemon = random_pokemon()
-        print('You were given {}'.format(my_pokemon['name']))
+        print('you were given {}'.format(my_pokemon['name']))
         stat_choice = input('Which stat do you want to use? (id, height, weight) ')
         opponent_pokemon = random_pokemon()
         print('The opponent chose {}'.format(opponent_pokemon['name']))
@@ -80,5 +84,19 @@ def compare_stats(my_stat, opponent_stat):
         print('Draw On This Round!')
         return False
 
+#extention - ask if the player would like to play again
+def play_again():
+    play_again = input("Would you like to play again " +playername+ "? yes/no ")
+    print("\n")
+    if play_again == "yes":
+        print("\n~~~~NEW~~~~ROUND~~~~")
+
+    elif play_again == "no":
+        print("\n~~~~GAME~~~~OVER~~~~")
 
 run()
+play_again()
+
+run()
+
+
