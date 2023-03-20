@@ -24,6 +24,12 @@
 import random
 import requests
 
+
+#EXTENTION add in
+print("\nhello, are you ready to play pokemon top trumps?")
+player = input("please enter your name here : ")
+
+
 # this is a function that calls the pokemon API and returns four stats from a random pokemon
 def random_pokemon():
     pokemon_number = random.randint(1, 151)
@@ -36,6 +42,8 @@ def random_pokemon():
     'height': pokemon['height'],
     'weight': pokemon['weight'],
     }
+
+
 
 # this is a function that runs the game three times and keeps a hold of the overall score
 def run():
