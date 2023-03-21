@@ -15,7 +15,7 @@
 #
 # Could Have (nice to have initiatives that will have a small impact if left out)
 # Introducing the game to the player and asking if they'd like to play
-#Ask if the player would like to play again
+# Ask if the player would like to play again
 # Allow the opponent (computer) to choose a stat that they would like to compare
 #
 # Will Not Have (initiatives that are not priority for this specific time frame)
@@ -47,6 +47,7 @@ def random_pokemon():
     'weight': pokemon['weight'],
     }
 
+random_pokemon()
 
 
 # this is a function that runs the game three times and keeps a hold of the overall score
@@ -62,6 +63,37 @@ def run():
         if outcome == True:
             score += 1
     calculate_win(score)
+
+
+#attempt at allowing the player to choose between three random pokemon, but i cant figure out how to make the code work
+#    pokemon_1 = random_pokemon()
+#    pokemon_2 = random_pokemon()
+#    pokemon_3 = random_pokemon()
+
+#    print("\nPokemon 1 - {} - id: {}    weight: {}    height: {}".format(pokemon_1["name"], pokemon_1["id"], pokemon_1["weight"], pokemon_1["height"]))
+#    print("Pokemon 2 - {} - id: {}    weight: {}    height: {}".format(pokemon_2["name"], pokemon_2["id"], pokemon_2["weight"], pokemon_2["height"]))
+#    print("Pokemon 3 - {} - id: {}    weight: {}    height: {}\n".format(pokemon_3["name"], pokemon_3["id"], pokemon_3["weight"], pokemon_3["height"]))
+
+#    player_choice = input("\n{} choose a pokemon to battle - {}, {} or {} : \n".format(playername, pokemon_1["name"], pokemon_2["name"], pokemon_3["name"]))
+
+#   if player_choice == pokemon_1["name"]:
+#        player_pokemon = pokemon_1
+#        print("\n{} has chosen to battle {}.".format(playername, pokemon_1))
+#    elif player_choice == pokemon_2["name"]:
+#        player_pokemon = pokemon_2
+#        print("\n{} has chosen to battle {}.".format(playername, pokemon_2))
+#   elif player_choice == pokemon_3["name"]:
+#        player_pokemon = pokemon_3
+#        print("\n{} has chosen to battle {}.".format(playername, pokemon_3))
+
+#    stat_choice = input("\n{} which stat do you want to use? (id, height, weight)".format(playername))
+
+#    opponent_pokemon = random_pokemon()
+#        print('\nThe opponent chose {}'.format(opponent_pokemon['name']))
+
+ #   player_stat = player_pokemon[stat_choice]
+ #   opponent_stat = random_pokemon()
+
 
 # this is a function to calculate whether my score is enough to win overall
 def calculate_win(score):
