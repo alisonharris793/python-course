@@ -9,7 +9,7 @@
 # Compare the player's and opponent's Pokemon on the chosen stat to decide who wins
 #
 # Should Have (important initiatives that are not vital, but add significant value)
-# Get multiple random Pokemon and let the player decide which one that they want to use
+# Get multiple random Pokemon and let the player decide which stat that they want to use
 # Play multiple rounds and record the outcome of each round. The player with most number of rounds won, wins the game
 # Record high scores for players and store them in a file
 #
@@ -30,8 +30,8 @@ import requests
 print("Welcome to the Pokemon Top Trumps Game!\n")
 playername = input("Please enter your name: ")
 print("Hello " + playername + ", get ready to enter the world of Pokemon!\n")
-computername = "Computer"
-print("You are playing against " + computername +  ", get ready...\n")
+computer = "Computer"
+print("You are playing against " + computer +  ", get ready...\n")
 
 
 # this is a function that calls the pokemon API and returns four stats from a random pokemon
@@ -64,35 +64,52 @@ def run():
             score += 1
     calculate_win(score)
 
+#def run():
+#    player_score = 0
+#    opponent_score = 0
 
-#attempt at allowing the player to choose between three random pokemon, but i cant figure out how to make the code work
-#    pokemon_1 = random_pokemon()
-#    pokemon_2 = random_pokemon()
-#    pokemon_3 = random_pokemon()
+#        pokemon_1 = random_pokemon()
+#        pokemon_2 = random_pokemon()
+#        pokemon_3 = random_pokemon()
 
-#    print("\nPokemon 1 - {} - id: {}    weight: {}    height: {}".format(pokemon_1["name"], pokemon_1["id"], pokemon_1["weight"], pokemon_1["height"]))
-#    print("Pokemon 2 - {} - id: {}    weight: {}    height: {}".format(pokemon_2["name"], pokemon_2["id"], pokemon_2["weight"], pokemon_2["height"]))
-#    print("Pokemon 3 - {} - id: {}    weight: {}    height: {}\n".format(pokemon_3["name"], pokemon_3["id"], pokemon_3["weight"], pokemon_3["height"]))
+#        print("\nPokemon 1 - {} - id: {}    weight: {}    height: {}".format(pokemon_1["name"], pokemon_1["id"], pokemon_1["weight"], pokemon_1["height"]))
+#        print("Pokemon 2 - {} - id: {}    weight: {}    height: {}".format(pokemon_2["name"], pokemon_2["id"], pokemon_2["weight"], pokemon_2["height"]))
+#        print("Pokemon 3 - {} - id: {}    weight: {}    height: {}\n".format(pokemon_3["name"], pokemon_3["id"], pokemon_3["weight"], pokemon_3["height"]))
 
 #    player_choice = input("\n{} choose a pokemon to battle - {}, {} or {} : \n".format(playername, pokemon_1["name"], pokemon_2["name"], pokemon_3["name"]))
 
-#   if player_choice == pokemon_1["name"]:
-#        player_pokemon = pokemon_1
+#    if player_choice == pokemon_1["name"]:
+#       player_pokemon = pokemon_1
 #        print("\n{} has chosen to battle {}.".format(playername, pokemon_1))
 #    elif player_choice == pokemon_2["name"]:
 #        player_pokemon = pokemon_2
 #        print("\n{} has chosen to battle {}.".format(playername, pokemon_2))
-#   elif player_choice == pokemon_3["name"]:
+#    elif player_choice == pokemon_3["name"]:
 #        player_pokemon = pokemon_3
 #        print("\n{} has chosen to battle {}.".format(playername, pokemon_3))
 
-#    stat_choice = input("\n{} which stat do you want to use? (id, height, weight)".format(playername))
+#   stat_choice = input("\n{} which stat do you want to use? (id, height, weight)".format(playername))
 
-#    opponent_pokemon = random_pokemon()
-#        print('\nThe opponent chose {}'.format(opponent_pokemon['name']))
+#   opponent_pokemon = random_pokemon()
+#    print('\nThe computer chose {}'.format(opponent_pokemon['name']))
 
- #   player_stat = player_pokemon[stat_choice]
- #   opponent_stat = random_pokemon()
+#   player_stat = player_pokemon[stat_choice]
+#   opponent_stat = opponent_pokemon[stat-choice]
+#
+#    if player_stat > opponent_stat:
+#       print("\n{}\'s {} was {} and the computers was {} ~~~ YOU WIN!".format(playername, stat_choice, player_stat, opponnt_stat))
+#
+#        player_score = player_score + 1
+#
+#    elif player_stat < opponent_stat:
+#        print("\n{}\' {} was {} and the computers was {} ~~~ YOU LOSE!".format(playername, stat_choice, player_stat, opponent_stat))
+#
+#        opponent_score = opponent_score + 1
+#
+#    else:
+#        print("\n~~~DRAW~~~")
+#
+#        print("\nAfter that round {}\'s score is: {} \nComputers score is: {}\n".format(playername, player_score, opponent_score))
 
 
 # this is a function to calculate whether my score is enough to win overall
@@ -128,7 +145,9 @@ def play_again():
 
 run()
 play_again()
+#my issue with this part of the code is that it will play again despite the player saying no, in attempts to fix this i have taken away the run(), however
+# this led to the code asking the player if they want to play again after entering their name, and resulted in the game not starting
 
-run()
+
 
 
